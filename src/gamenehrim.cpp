@@ -51,20 +51,17 @@ QString GameNehrim::gameName() const
 QList<ExecutableInfo> GameNehrim::executables() const
 {
   return QList<ExecutableInfo>()
-      << ExecutableInfo("Nehrim", findInGameFolder("Oblivion.exe"))
-      << ExecutableInfo("Nehrim Launcher", findInGameFolder("NehrimLauncher.exe"))
-      << ExecutableInfo("Oblivion Mod Manager", findInGameFolder("OblivionModManager.exe"))
-      << ExecutableInfo("BOSS", findInGameFolder("BOSS/BOSS.exe"))
-      << ExecutableInfo("LOOT", QFileInfo(getLootPath())).withArgument("--game=\"Oblivion\"")
-      << ExecutableInfo("Construction Set", findInGameFolder("TESConstructionSet.exe"))
-  ;
+    << ExecutableInfo("Nehrim", findInGameFolder("Oblivion.exe"))
+    << ExecutableInfo("Nehrim Launcher", findInGameFolder("NehrimLauncher.exe"))
+    << ExecutableInfo("Construction Set", findInGameFolder("TESConstructionSet.exe"))
+    << ExecutableInfo("LOOT", QFileInfo(getLootPath())).withArgument("--game=\"Oblivion\"");
 }
 
 QList<ExecutableForcedLoadSetting> GameNehrim::executableForcedLoads() const
 {
   //TODO Search game directory for OBSE DLLs
   return QList<ExecutableForcedLoadSetting>()
-      << ExecutableForcedLoadSetting("Oblvion.exe", "obse_1_2_416.dll").withForced().withEnabled()
+      << ExecutableForcedLoadSetting("Oblivion.exe", "obse_1_2_416.dll").withForced().withEnabled()
       << ExecutableForcedLoadSetting("TESConstructionSet.exe", "obse_editor_1_2.dll").withForced().withEnabled()
   ;
 }

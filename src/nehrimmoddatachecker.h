@@ -14,10 +14,7 @@ public:
 protected:
   virtual const FileNameSet& possibleFolderNames() const override {
     static FileNameSet result{
-      "fonts", "interface", "menus", "meshes", "music", "scripts", "shaders",
-      "sound", "strings", "textures", "trees", "video", "facegen",
-      "obse", "distantlod", "asi", "distantland", "mits", "dllplugins", "CalienteTools",
-      "NetScriptFramework"
+      "fonts", "interface", "menus", "meshes", "music", "scripts", "shaders", "sound", "strings", "textures", "trees", "video", "facegen", "obse", "distantlod", "asi", "distantland", "mits", "dllplugins", "CalienteTools", "BashTags", "Root"
     };
     return result;
   }
